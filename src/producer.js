@@ -1,12 +1,12 @@
 const amqp = require('amqplib');
 
-const QUEUE = 'demo_queue1';
+const QUEUE = 'demo_queue';
 const BROKER_URL = 'amqps://<username>:<password>@amqps://b-1c2930c4-a5f3-4b1d-9778-64b189aa8e3a.mq.ap-south-1.amazonaws.com:5671'; // replace with your values
 
 async function sendMessage() {
 try {
     console.log("1")
-const connection = await amqp.connect('amqps://<username>:<password>@b-1c2930c4-a5f3-4b1d-9778-64b189aa8e3a.mq.ap-south-1.amazonaws.com:5671',{
+const connection = await amqp.connect('amqp://localhost:5672',{
     ssl: {
         rejectUnauthorized: true, // Ensure the connection is secure
     },
